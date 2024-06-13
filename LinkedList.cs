@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -132,13 +132,30 @@ namespace LinkedList_Project
             }
             
         }
-
+       
+        /*
        public void PrintedReverse()
         {
             Reverse();
             PrintAll();
             Reverse();
         }
+        */
+
+        public void PrintedReverse()
+        {
+            _PrintedReverse(head);
+        }
+
+
+        public void _PrintedReverse(Node<T> _node )
+        {
+            if (_node == null)
+                return;
+            _PrintedReverse(_node.next);
+            Console.WriteLine(_node.data);
+        }
+
 
         public int Size()
         {
@@ -192,6 +209,37 @@ namespace LinkedList_Project
             head = null;
         }
 
+        public T[] ToArray()
+        {
+           
+            T[] _array = new T[] { };
+
+            int _index = 0; 
+
+            Node<T> current = head;
+            while (current != null)
+            {
+                _array[_index] = current.data; 
+                current = current.next; 
+                _index++; 
+            }
+
+            return _array; 
+        }
+
+        public string ToString()
+        {
+
+            string _string = "";
+
+            Node<T> current = head;
+            while (current != null)
+            {
+                _string  += current.data + " ";
+            }
+
+            return _string;
+        }
     }
 
 
