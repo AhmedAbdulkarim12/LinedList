@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +26,11 @@ namespace LinkedList_Project
                 Console.WriteLine("10. Empty a singly linked list");
                 Console.WriteLine("11. Remove the node from the singly linked list at the specified index");
                 Console.WriteLine("12. Calculate the size of a Singly Linked list");
+                Console.WriteLine("13. removes the first element from a Singly Linked list");
+                Console.WriteLine("14. removes the tail element from a Singly Linked list");
+                Console.WriteLine("15. convert a Singly Linked list into an array");
+                Console.WriteLine("16. convert a Singly Linked list into a string");
+                Console.WriteLine("18. check if an element is present in the Singly Linked list");
                 Console.WriteLine("0. Exit");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -79,6 +84,26 @@ namespace LinkedList_Project
                     case 12:
                         Console.WriteLine("");
                         Q12();
+                        break;
+                    case 13:
+                        Console.WriteLine("");
+                        Q13();
+                        break;
+                    case 14:
+                        Console.WriteLine("");
+                        Q14();
+                        break;
+                    case 15:
+                        Console.WriteLine("");
+                        Q15();
+                        break;
+                    case 16:
+                        Console.WriteLine("");
+                        Q16();
+                        break;
+                    case 18:
+                        Console.WriteLine("");
+                        Q18();
                         break;
                     case 0:
                         Console.WriteLine("Exiting...");
@@ -290,7 +315,7 @@ namespace LinkedList_Project
             list.PrintAll();
         }
 
-        // 12. Write a  c# program that calculates the size of a Singly Linked list.
+        //Write a  c# program that calculates the size of a Singly Linked list.
         static void Q12()
         {
             LinkedList<string> list = new LinkedList<string>();
@@ -303,6 +328,103 @@ namespace LinkedList_Project
             Console.WriteLine("----- Print -----");
             list.PrintAll();
             Console.WriteLine("list Size: " + list.Size());
+
+        }
+
+        //Write a c# program that removes the first element from a Singly Linked list.
+        static void Q13()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+            list.AddLast("a");
+            list.AddLast("b");
+            list.AddLast("c");
+            list.AddLast("d");
+            list.AddLast("e");
+
+            Console.WriteLine("----- Print -----");
+            list.PrintAll();
+
+            list.Remove(0);
+
+            Console.WriteLine("----- Print after remove first node -----");
+            list.PrintAll();
+
+        }
+
+        //Write a  c# program that removes the tail element from a Singly Linked list.
+        static void Q14()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+            list.AddLast("a");
+            list.AddLast("b");
+            list.AddLast("c");
+            list.AddLast("d");
+            list.AddLast("e");
+
+            Console.WriteLine("----- Print -----");
+            list.PrintAll();
+
+            list.Remove(list.Size());
+
+            Console.WriteLine("----- Print after remove tail node -----");
+            list.PrintAll();
+
+        }
+
+        //Write a  c# program to convert a Singly Linked list into an array.
+        static void Q15()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+            list.AddLast("a");
+            list.AddLast("b");
+            list.AddLast("c");
+            list.AddLast("d");
+            list.AddLast("e");
+
+            Console.WriteLine("----- Print -----");
+            list.PrintAll();
+
+            var arr = list.ToArray();
+
+            Console.WriteLine("----- Print from array -----");
+            for (int i = 0; i < arr.Length; i++)
+                Console.WriteLine(arr[i]);
+        }
+
+        //Write a  c# program to convert a Singly Linked list into a string.
+        static void Q16()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+            list.AddLast("a");
+            list.AddLast("b");
+            list.AddLast("c");
+            list.AddLast("d");
+            list.AddLast("e");
+
+            Console.WriteLine("----- Print -----");
+            list.PrintAll();
+
+            var text = list.ToString();
+
+            Console.WriteLine("----- Print from String -----");
+            Console.WriteLine(text);
+        }
+
+        // Write a c# program to check if an element is present in the Singly Linked list.
+        static void Q18()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+            list.AddLast("a");
+            list.AddLast("b");
+            list.AddLast("c");
+            list.AddLast("d");
+            list.AddLast("e");
+
+            Console.WriteLine("----- Print -----");
+            list.PrintAll();
+
+            Console.WriteLine("----- check if an element (c) is present in the list -----");
+            Console.WriteLine(list.FindFirstIndex("c") > 0 ? "is present in list" : "is not present in list");
 
         }
 
