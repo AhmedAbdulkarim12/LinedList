@@ -212,7 +212,7 @@ namespace LinkedList_Project
         public T[] ToArray()
         {
            
-            T[] _array = new T[] { };
+            T[] _array = new T[this.Size()];
 
             int _index = 0; 
 
@@ -224,7 +224,8 @@ namespace LinkedList_Project
                 _index++; 
             }
 
-            return _array; 
+            return _array;
+
         }
 
         public string ToString()
@@ -236,6 +237,7 @@ namespace LinkedList_Project
             while (current != null)
             {
                 _string  += current.data + " ";
+                current = current.next;
             }
 
             return _string;
